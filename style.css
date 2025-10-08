@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.menu {
+    background-color: #4a4a4a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.menu h1 {
+    margin-top: 0;
+}
+
+.menu select, .menu button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+.menu button {
+    background-color: #8b4513;
+    color: white    ;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.taverna {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    perspective: 1000px;
+}
+
+.heroi {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.heroi.revelado {
+    transform: rotateY(180deg);
+}
+.heroi-frente, .heroi-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.heroi-verso {
+    background: #6b3513 url('https://i.imgur.com/example_card_back.png') center/cover;
+}
+
+.heroi-frente {
+    background-color: #f0f0f0;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heroi-frente img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.heroi.par-formado {
+    cursor: default;
+    opacity: 0.5;
+}
+.hidden {
+    display: none;
+}
